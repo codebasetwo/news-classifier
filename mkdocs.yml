@@ -1,0 +1,20 @@
+site_name: News Classification Docs
+repo_url: https://github.com/codebasetwo/newsfeed-classification/
+nav:
+  - Home: index.md
+  - newsfeed:
+    - config: newsfeed/config.md
+    - data: newsfeed/data.md
+    - evaluate: newsfeed/evaluate.md
+    - models: newsfeed/models.md
+    - predict: newsfeed/predict.md
+    - serve: newsfeed/serve.md
+    - train: newsfeed/train.md
+    - tune: newsfeed/tune.md
+    - utils: newsfeed/utils.md
+  - About: newsfeed/about.md
+theme: readthedocs
+plugins:
+  - mkdocstrings
+watch:
+  - .  # reload docs for any file changes

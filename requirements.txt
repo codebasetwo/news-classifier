@@ -1,0 +1,43 @@
+# Defaults
+pandas==2.2.3
+numpy
+sckit-learn
+tf-keras
+seaborn
+matplotlib
+tensorflow==2.18.0
+transformers==4.47.1
+mlflow==2.20.1
+nltk
+wordcloud
+google-generativeai
+ipywidgets==8.1.5
+hyperopt
+
+# Notebooks
+cleanlab
+jupyterlab
+
+# Testing
+pytest
+pytest-cov
+great-expectations
+
+# Documentation
+mkdocs
+mkdocstrings
+mkdocstrings[python]
+
+# Styling
+black
+flake8
+flake8-pyproject
+isort
+pyupgrade
+
+# Development
+fastapi
+pre-commit
+typer
+
+# Deployment

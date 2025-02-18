@@ -1,0 +1,23 @@
+# python
+__pycache__/
+*.pyc
+
+# jupyter
+.ipynb_checkpoints/
+
+# Log files
+logs/
+*.log
+
+# Data directories
+datasets/
+
+# Environments
+.env
+
+# Temporary files
+*.tmp
+*.temp
+
+# VS code
+.vscode/

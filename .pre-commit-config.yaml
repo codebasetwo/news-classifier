@@ -1,0 +1,45 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-added-large-files
+        args: ['--maxkb=1000']
+        exclude: "notebooks"
+    -   id: check-symlinks
+    -   id: check-yaml
+        exclude: "mkdocs.yml"
+    # black
+-   repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+    -   id: black
+        name: black
+        description: "Black: The uncompromising Python code formatter"
+        entry: black
+        language: python
+        minimum_pre_commit_version: 2.9.2
+        require_serial: true
+        types_or: [python, pyi]
+    # pyupgrade    
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.19.1
+    hooks:
+    -   id: pyupgrade
+        name: pyupgrade
+        description: Automatically upgrade syntax for newer versions.
+        entry: pyupgrade
+        language: python
+        types: [python]
+        # for backward compatibility
+        files: ''
+        minimum_pre_commit_version: 0.15.0
+        args: [--py39-plus]
+    # isort
+- repo: https://github.com/pycqa/isort
+  rev: 5.13.2
+  hooks:
+    - id: isort
