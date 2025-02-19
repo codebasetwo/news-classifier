@@ -106,11 +106,13 @@ def save_dict_to_json(
     directory = os.path.dirname(path)
     if directory and not os.path.exists(directory):  # pragma: no cover
         os.makedirs(directory)
-        # Writing dictionary to a JSON file
+
+    # Check if the file exists
+    if not os.path.exists(path):
+        # Writing dictionary to a new JSON file
         with open(path, "w") as fp:
             json.dump([data], fp=fp, cls=cls, sort_keys=sortkeys)
             fp.write("\n")
-
     else:
         # Reading the existing data from the JSON file
         with open(path, "r") as fp:
