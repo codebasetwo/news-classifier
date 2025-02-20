@@ -81,7 +81,7 @@ def get_best_model(run_id: str) -> tf.keras.Model:
     return model
 
 
-def format_probability(probabilities, index_to_class) -> Dict[str, float]:
+def format_probability(probabilities: np.ndarray, index_to_class: Dict[int, str]) -> Dict[str, float]:
     """
     Formats raw class probabilities into a dictionary mapping class labels to their probabilities.
 
@@ -205,6 +205,7 @@ def predict(
                 "date": "2014-09-23",
             }
         ]
+        sample = pd.read_csv(sample)
     else:
         sample = load_dataframe(dataset_loc, num_samples=num_samples)
 

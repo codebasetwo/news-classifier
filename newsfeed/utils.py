@@ -68,7 +68,7 @@ def encode(df: pd.DataFrame) -> Dict:
 
     return class_to_index
 
-
+# Index to label
 def decode(indices: List[int], index_to_class: Dict[int, str]) -> List[str]:
     """
     Converts a list of integer indices back to their corresponding string labels.

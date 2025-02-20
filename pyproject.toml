@@ -34,3 +34,13 @@ ignore = ["E501", "W503", "E226"]
 
 [tool.pyupgrade]
 py39plus = true
+
+# Pytest
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+markers = [
+    "training: marks tests as related to training scenarios.",
+    "slow: marks tests as slow to run.",
+    "tune: marks test as related to tuning models."
+]
