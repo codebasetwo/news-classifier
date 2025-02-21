@@ -1,0 +1,50 @@
+# Run unit tests for your Python application with bash script
+
+name: NewsFeed-Actions Workloads. 
+on:
+  # Triggers the workflows on push and pull 
+  push:
+    branches:
+      - main
+    paths:
+      - 'newsfeed/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'newsfeed/**'
+    
+jobs:
+  # This workflow contains a single job.
+  run-workloads:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: bash
+        working-directory: .
+
+    env:
+        EXPERIMENT_NAME: "news_model_experiment"
+        PYTHONPATH: ${{ github.workspace }}
+        DATASET_LOC: "datasets/holdout.csv"
+
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      - 
+        name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - 
+        name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      -
+        # Make the script executable and run it
+        name: Execute workloads
+        run: |
+          chmod +x deploy/jobs/workloads.sh 
+          ./deploy/jobs/workloads.sh

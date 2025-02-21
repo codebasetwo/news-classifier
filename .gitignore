@@ -10,7 +10,9 @@ logs/
 *.log
 
 # Data directories
-datasets/
+datasets/news-category-dataset.zip
+datasets/News_Category_Dataset_v3.json
+datasets/news_category_dataset.json
 
 # Environments
 .env
