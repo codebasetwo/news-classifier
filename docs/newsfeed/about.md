@@ -68,6 +68,7 @@ To get started with the project, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/codebasetwo/newsfeed-classification.git
-   cd newsfeed-classification
+   git clone https://github.com/codebasetwo/news-classifier.git
+   cd news-classifier
    pip install -r requirements.txt
+   ```

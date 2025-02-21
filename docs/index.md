@@ -65,7 +65,7 @@ I welcome contributions to this project! If you'd like to contribute, please fol
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/codebasetwo/news-classifier/LICENSE) file for details.
 
 ---
 
@@ -74,7 +74,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For questions or feedback, please contact:
 
 - **Your Name**: [codebasetwo](mailto:codebasetwo@gmail.com)
-- **Project Repository**: [GitHub Repository](https://github.com/yourusername/newsfeed-classification)
+- **Project Repository**: [GitHub Repository](https://github.com/codebasetwo/news-classifier)
 
 ---
 

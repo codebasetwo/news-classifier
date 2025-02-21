@@ -26,7 +26,7 @@ ZIP_LOC = Path(DATASET_BASE_PATH, "news-category-dataset.zip")
 
 # Config Mlflow
 MLFLOW_DIR = Path(
-    ROOT_DIR, f"mlflow/{os.environ.get('GITHUB_USERNAME', 'mlflow_runs')}"
+    f"/tmp/{os.environ.get('GITHUB_USERNAME', 'codebasetwo')}/mlflow"
 )
 Path(MLFLOW_DIR).mkdir(parents=True, exist_ok=True)
 MLFLOW_TRACKING_URI = "file://" + str(MLFLOW_DIR.absolute())
