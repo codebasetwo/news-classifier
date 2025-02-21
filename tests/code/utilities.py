@@ -3,7 +3,7 @@ from newsfeed.config import mlflow
 
 
 
-def generate_experiment_name(prefix: str = "test") -> str:
+def generate_experiment_name(prefix: str = "test_") -> str:
     date_str = datetime.datetime.now().strftime("%B %d, %Y %I:%M:%S %p")
     return f"{prefix}-{date_str}"
 

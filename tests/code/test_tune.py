@@ -3,7 +3,7 @@ from newsfeed import tune
 import utilities
 
 
-@pytest.mark.skip(reason = "logic not full developed")
+@pytest.mark.skip(reason = "assert logic not fully developed")
 @pytest.mark.training
 def test_tune_hyperparameters(dataset_loc):
     experiment_name = utilities.generate_experiment_name()

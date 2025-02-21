@@ -2,7 +2,7 @@ import pytest
 from newsfeed import train
 import utilities
 
-@pytest.mark.skip
+@pytest.mark.skip(reason="Compute intensive resource limitation")
 @pytest.mark.training
 def test_train_func(dataset_loc):
     experiment_name = utilities.generate_experiment_name()

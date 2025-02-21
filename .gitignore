@@ -21,3 +21,6 @@ datasets/
 
 # VS code
 .vscode/
+
+# pytest
+.pytest_cache

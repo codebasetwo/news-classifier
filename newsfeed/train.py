@@ -89,12 +89,11 @@ def train_func(
             "batch_size": batch_size,
             "max_length": max_length,
             "learning_rate": learning_rate,
-            "num_classes": num_classes,
-            "model": model_name,
+            "model_name": model_name,
             "num_samples": num_samples,
         }
 
-    df = load_dataframe(dataset_loc, num_samples=params["num_samples"])
+    df = load_dataframe(dataset_loc, num_samples=params.get("num_samples", None) or num_samples)
     if split_train:
         train_df, val_df = split_train_test(df)
         # Get size of training data
@@ -105,8 +104,8 @@ def train_func(
         train_size = len(train_df)
         validation_split = 0.2
 
-    preprocessor = DataPreprocessor(train_df, max_length=params["max_length"])
-    train_df, _, _ = preprocessor().transform(batch_size=params["batch_size"])
+    preprocessor = DataPreprocessor(train_df, max_length=params.get("max_length", None) or max_length)
+    train_df, _, _ = preprocessor().transform(batch_size=params.get("batch_size", None) or batch_size)
 
     if val_df is not None:
         preprocessor = DataPreprocessor.load_class_index(val_df)
@@ -114,10 +113,10 @@ def train_func(
 
     # Training components
     loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-    num_train_steps = train_size * params["num_epochs"]
+    num_train_steps = train_size * (params.get("num_epochs", None) or num_epochs)
 
     lr_scheduler = PolynomialDecay(
-        initial_learning_rate=params["learning_rate"],
+        initial_learning_rate=params.get("learning_rate", None) or None,
         end_learning_rate=0.0,
         decay_steps=num_train_steps,
     )
@@ -129,8 +128,8 @@ def train_func(
         loss=loss_fn,
         metrics=metrics,
         optimizer=optimizer,
-        num_classes=params["num_classes"],
-        model_name=params["model"],
+        num_classes=num_classes,
+        model_name=params.get("model_name", None) or model_name,
     )
 
     model.create_and_compile_model()
@@ -149,8 +148,8 @@ def train_func(
             history = model.fit_model(
                 train_df,
                 validation_dataset=val_df,
-                epochs=params["num_epochs"],
-                batch_size=params["batch_size"],
+                epochs=params.get("num_epochs", None) or num_epochs,
+                batch_size=params.get("batch_size", None) or batch_size,
                 callbacks=callbacks,
             )
 
@@ -158,8 +157,8 @@ def train_func(
             history = model.fit_model(
                 train_df,
                 validation_split=validation_split,
-                epochs=params["num_epochs"],
-                batch_size=params["batch_size"],
+                epochs=params.get("num_epochs", None) or num_epochs,
+                batch_size=params.get("batch_size", None) or batch_size,
                 callbacks=callbacks,
             )
 
