@@ -186,38 +186,38 @@ python newsfeed/predict.py predict \
   ```
 
   Once the application is running, we can use it via CURL, Python, etc.: <br>
-  1. `Via CURL`
-    ```bash
-    curl -X POST http://localhost:80/predict \
-        -H "Content-Type: application/json"
-    curl -X POST  http://127.0.0.1:8000/predict/predict/ \
-    -H "Content-Type: application/json" \
-    -d '[
-            {
-                "link": "https://www.huffingtonpost.com/entry/prescription-drug-overdose_us_5b9d7ea7e4b03a1dcc88b84f",
-                "headline": 'Texas Court OKs "Up Skirts": WTF?!',
-                "category": "NEWS & POLITICS",
-                "short_description": "This week, the Texas Court of Appeals made a ruling that is both outrageous and grotesque... and for the first time in recorded history, it has nothing to do with either abortion or the death penalty.",
-                "authors": "Jon Hotchkiss, ContributorHost, Be Less Stupid",
-                "date": "2014-09-23",
-            }
-            ]'
-    ```
-  2. `Via Python`
-    ```python
-    # Python
-    import json
-    import requests
-    link = "https://www.huffingtonpost.com/entry/prescription-drug-overdose_us_5b9d7ea7e4b03a1dcc88b84f"
-    headline = 'Texas Court OKs "Up Skirts": WTF?!'
-    category: "NEWS & POLITICS"
-    short_description = "This week, the Texas Court of Appeals made a ruling that is both outrageous and          grotesque... and for the first time in recorded history, it has nothing to do with either abortion or the death penalty."
-    authors = "Jon Hotchkiss, ContributorHost, Be Less Stupid"
-    date = "2014-09-23"
-    data = [{"link": link, "headline": headline, "category": category, 
-    "short_description": short_description, "authors": authors, "date": date}]
-    requests.post("http://127.0.0.1:8000/predict", data=data).json()
-    ```
+  1. `Via CURL` <br>
+      ```bash
+      curl -X POST http://localhost:80/predict \
+          -H "Content-Type: application/json"
+      curl -X POST  http://127.0.0.1:8000/predict/predict/ \
+      -H "Content-Type: application/json" \
+      -d '[
+              {
+                  "link": "https://www.huffingtonpost.com/entry/prescription-drug-overdose_us_5b9d7ea7e4b03a1dcc88b84f",
+                  "headline": 'Texas Court OKs "Up Skirts": WTF?!',
+                  "category": "NEWS & POLITICS",
+                  "short_description": "This week, the Texas Court of Appeals made a ruling that is both outrageous and grotesque... and for the first time in recorded history, it has nothing to do with either abortion or the death penalty.",
+                  "authors": "Jon Hotchkiss, ContributorHost, Be Less Stupid",
+                  "date": "2014-09-23",
+              }
+              ]'
+      ```
+  2. `Via Python` <br>
+      ```python
+      # Python
+      import json
+      import requests
+      link = "https://www.huffingtonpost.com/entry/prescription-drug-overdose_us_5b9d7ea7e4b03a1dcc88b84f"
+      headline = 'Texas Court OKs "Up Skirts": WTF?!'
+      category: "NEWS & POLITICS"
+      short_description = "This week, the Texas Court of Appeals made a ruling that is both outrageous and          grotesque... and for the first time in recorded history, it has nothing to do with either abortion or the death penalty."
+      authors = "Jon Hotchkiss, ContributorHost, Be Less Stupid"
+      date = "2014-09-23"
+      data = [{"link": link, "headline": headline, "category": category, 
+      "short_description": short_description, "authors": authors, "date": date}]
+      requests.post("http://127.0.0.1:8000/predict", data=data).json()
+      ```
 
 ### Testing
 ```bash
