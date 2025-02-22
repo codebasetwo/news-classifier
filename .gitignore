@@ -12,6 +12,8 @@ logs/
 # Data directories
 datasets/news-category-dataset.zip
 datasets/News_Category_Dataset_v3.json
+datasets/product_design.md
+datasets/system_design.md
 datasets/news_category_dataset.json
 
 # Environments
