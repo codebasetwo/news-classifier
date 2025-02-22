@@ -14,7 +14,7 @@ export PARAMS='{"num_epochs": 3, "max_length": 128, "batch_size": 64, "learning_
 python newsfeed/train.py \
     --dataset-loc "$TRAIN_SET_LOC" \
     --params "$PARAMS" \
-    --history_fp $RESULTS_FILE \
+    --history_fp "$RESULTS_FILE" \
     --experiment-name "$EXPERIMENT_NAME" \
     
 
